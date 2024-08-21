@@ -3,14 +3,21 @@
 This resource allows you to integrate your own radios in place of the original radios.
 It's fully written in JavaScript and uses resource metadata for its configuration.
 
+## Rewritten by Drazox
+This was a small question from my friend, and I wanted to release this because:
+
+My Resource Monitor is at 0.0ms while not in use! (OG script was at 0.25ms for no reason every goddam time WHILE NOT NEEDED)
+While in use, it’s around 0.05ms, maybe. I don’t know never tested it!
+Have fun using this hot garbage!
+
+(No offense to the original creator; the idea was good and it was working, but Resource Monitor is not reasonable!)
 ## Features
 
-* Radio wheel
+* Radio wheel Default GTA can change the original names (No, i will not make this)
 * Audio file
 * Audio stream
-* No dependency
 * Easy configuration
-* Player-configurable volume
+* Player-configurable volume (nope)
 
 ## Showcase
 
@@ -22,13 +29,7 @@ Video showing Los Santos Rock Radio replaced by a WebRadio and Non-Stop-Pop FM r
 * No MPEG or AAC support as CEF only supports open formats
 
 ## Configuration
-
-For each custom radio, add this line in `fxmanifest.lua`:
-```lua
-supersede_radio "[ORIGINAL_RADIO_NAME]" { url = "[RADIO URL]", volume = 0.5, name = "[NEW RADIO NAME]" }
-```
-
-You can find the list of radio names in [`data.js`](radio/data.js) and a full example in [`fxmanifest.lua`](radio/fxmanifest.lua).
+learn config.lua move from json
 
 ## Tips
 
