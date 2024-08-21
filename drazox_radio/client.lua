@@ -109,7 +109,7 @@ local function mainRadio()
             if IsPlayerVehicleRadioEnabled() then
                 local playerRadioStationName = GetPlayerRadioStationName()
                 local customRadio = nil
-                print(playerRadioStationName)
+                
                 for _, radio in ipairs(customRadios) do
                     if radio.name == playerRadioStationName then
                         customRadio = radio
