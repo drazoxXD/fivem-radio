@@ -3,7 +3,7 @@ local isPlaying = false
 local index = -1
 local volume = GetProfileSetting(306) / 10
 local previousVolume = volume
-local availableRadios =  {
+local availableRadios = {
     "RADIO_01_CLASS_ROCK",              -- Los Santos Rock Radio
     "RADIO_02_POP",                     -- Non-Stop-Pop FM
     "RADIO_03_HIPHOP_NEW",              -- Radio Los Santos
@@ -33,34 +33,34 @@ local availableRadios =  {
     "RADIO_37_MOTOMAMI"                 -- MOTOMAMI Los Santos
 }
 
-local customRadios = Config.radios
+local customRadios = Config.radios or {}
+
+local validCustomRadios = {}
 
 for i, radioEntry in ipairs(customRadios) do
     local radio = radioEntry.name
     local data = radioEntry.data
-
-    if not availableRadios[radio] then
-        lib.print.error(("radio: %s is an invalid radio."):format(radio))
-    else
-        table.insert(customRadios, {
-            isPlaying = false,
-            name = radio,
-            data = data
-        })
-
-        if data.name then
-            AddTextEntry(radio, data.name)
-        end
+    if data.name then
+        lib.print.info(radio, data.name, 'Loaded')
+        AddTextEntry(radio, data.name)
     end
+
+    table.insert(validCustomRadios, {
+        isPlaying = false,
+        name = radio,
+        data = data
+    })
 end
 
-for _, radioEntry in ipairs(customRadios) do
-    lib.print.info(("Radio Entry: Name: %s, URL: %s, Volume: %f"):format(
-        radioEntry.name,
-        radioEntry.data.url,
-        radioEntry.data.volume
-    ))
-end
+-- Print information about the valid custom radios
+-- for _, radioEntry in ipairs(validCustomRadios) do
+--     lib.print.info(("Radio Entry: Name: %s, URL: %s, Volume: %f"):format(
+--         radioEntry.name,
+--         radioEntry.data.url or "N/A",  -- Handle nil URL gracefully
+--         radioEntry.data.volume or 0.0  -- Handle nil Volume gracefully
+--     ))
+-- end
+
 
 RegisterNUICallback("radio:ready", function(data, cb)
     SendNUIMessage({ type = "create", radios = customRadios, volume = volume })
