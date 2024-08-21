@@ -27,7 +27,7 @@ Video showing Los Santos Rock Radio replaced by a WebRadio and Non-Stop-Pop FM r
 * No MPEG or AAC support as CEF only supports open formats
 
 ## Configuration
-everything is in cofnig.lua
+everything is in config.lua
 
 ## Tips
 
