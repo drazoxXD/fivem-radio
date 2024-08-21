@@ -13,7 +13,7 @@ Have fun using this hot garbage!
 (No offense to the original creator; the idea was good and it was working, but Resource Monitor is not reasonable!)
 ## Features
 
-* Radio wheel Default GTA cant change the original names (No, i will not make this)
+* Radio wheel Default GTA can change the original names (No, i will not make this)
 * Audio file
 * Audio stream
 * Easy configuration
@@ -29,7 +29,7 @@ Video showing Los Santos Rock Radio replaced by a WebRadio and Non-Stop-Pop FM r
 * No MPEG or AAC support as CEF only supports open formats
 
 ## Configuration
-everything is in config.lua
+learn config.lua move from json
 
 ## Tips
 
