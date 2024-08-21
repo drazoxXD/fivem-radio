@@ -3,6 +3,12 @@
 This resource allows you to integrate your own radios in place of the original radios.
 It's fully written in JavaScript and uses resource metadata for its configuration.
 
+## Rewritten by Drazox
+This was a small question from my friend and i wanted to relase this cuz mine resmon is 0.0ms while not use!
+while in use its around 0.05ms maybe idk!
+never tested it!
+have fun using this hot garbage! (no offense to original creator but idea was good and it was working but resmon is not reasonable!)
+
 ## Features
 
 * Radio wheel
