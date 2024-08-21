@@ -4,10 +4,7 @@ This resource allows you to integrate your own radios in place of the original r
 It's fully written in JavaScript and uses resource metadata for its configuration.
 
 ## Rewritten by Drazox
-This was a small question from my friend and i wanted to relase this cuz mine resmon is 0.0ms while not use!
-while in use its around 0.05ms maybe idk!
-never tested it!
-have fun using this hot garbage! (no offense to original creator but idea was good and it was working but resmon is not reasonable!)
+This was a small question from my friend, and I wanted to release this because my Resource Monitor is at 0.0ms while not in use! While in use, it’s around 0.05ms, maybe. I don’t know—never tested it! Have fun using this hot garbage! (No offense to the original creator, but the idea was good and it was working, but Resource Monitor is not reasonable!)
 
 ## Features
 
