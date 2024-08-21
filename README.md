@@ -11,12 +11,11 @@ have fun using this hot garbage! (no offense to original creator but idea was go
 
 ## Features
 
-* Radio wheel
+* Radio wheel Default GTA cant change the original names (No, i will not make this)
 * Audio file
 * Audio stream
-* No dependency
 * Easy configuration
-* Player-configurable volume
+* Player-configurable volume (nope)
 
 ## Showcase
 
@@ -28,13 +27,7 @@ Video showing Los Santos Rock Radio replaced by a WebRadio and Non-Stop-Pop FM r
 * No MPEG or AAC support as CEF only supports open formats
 
 ## Configuration
-
-For each custom radio, add this line in `fxmanifest.lua`:
-```lua
-supersede_radio "[ORIGINAL_RADIO_NAME]" { url = "[RADIO URL]", volume = 0.5, name = "[NEW RADIO NAME]" }
-```
-
-You can find the list of radio names in [`data.js`](radio/data.js) and a full example in [`fxmanifest.lua`](radio/fxmanifest.lua).
+everything is in cofnig.lua
 
 ## Tips
 
