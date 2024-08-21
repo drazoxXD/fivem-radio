@@ -6,8 +6,8 @@ It's fully written in JavaScript and uses resource metadata for its configuratio
 ## Rewritten by Drazox
 This was a small question from my friend, and I wanted to release this because:
 
-My Resource Monitor is at 0.0ms while not in use!
-While in use, it’s around 0.05ms, maybe. I don’t know—never tested it!
+My Resource Monitor is at 0.0ms while not in use! (OG script was at 0.25ms for no reason every goddam time WHILE NOT NEEDED)
+While in use, it’s around 0.05ms, maybe. I don’t know never tested it!
 Have fun using this hot garbage!
 
 (No offense to the original creator; the idea was good and it was working, but Resource Monitor is not reasonable!)
