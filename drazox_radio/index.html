@@ -3,7 +3,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"></script>
     <script>
         let customRadios;
-
+        var resName = location.host
         /**
          * Radio class containing the state of our stations.
          * Includes all methods for playing, stopping, etc.
@@ -84,7 +84,8 @@
         };
 
         document.addEventListener("DOMContentLoaded", () => {
-            fetch("http://drazox_radio/radio:ready", { "method": "POST", "body": "{}" });
+            const readyUrl = 
+            fetch('http://' + resName + '/radio:ready', { "method": "POST", "body": "{}" });
 
             window.addEventListener("message", (event) => {
                 let item = event.data;
@@ -110,7 +111,7 @@
                                 customRadios.play(index);
                             }
                         } else {
-                            fetch("http://drazox_radio/radio:ready", { "method": "POST", "body": "{}" });
+                            fetch('http://' + resName + '/radio:ready', { "method": "POST", "body": "{}" });
                         }
                         break;
                     case "stop":
