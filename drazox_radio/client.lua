@@ -104,43 +104,50 @@ end
 
 
 local function mainRadio()
-    CreateThread(function()
-        while cache.vehicle do
-            if IsPlayerVehicleRadioEnabled() then
-                local playerRadioStationName = GetPlayerRadioStationName()
-                local customRadio = nil
-                
-                for _, radio in ipairs(customRadios) do
-                    if radio.name == playerRadioStationName then
-                        customRadio = radio
-                        break
-                    end
+    while cache.vehicle do
+        if IsPlayerVehicleRadioEnabled() then
+            local playerRadioStationName = GetPlayerRadioStationName()
+            local customRadio = nil
+            
+            for _, radio in ipairs(customRadios) do
+                if radio.name == playerRadioStationName then
+                    customRadio = radio
+                    break
                 end
-    
-                if not isPlaying and customRadio then
-                    PlayCustomRadio(customRadio)
-                elseif isPlaying and customRadio and table.indexOf(customRadios, customRadio) ~= index then
-                    StopCustomRadios()
-                    PlayCustomRadio(customRadio)
-                elseif isPlaying and not customRadio then
-                    StopCustomRadios()
-                end
-            elseif isPlaying then
+            end
+
+            if not isPlaying and customRadio then
+                PlayCustomRadio(customRadio)
+            elseif isPlaying and customRadio and table.indexOf(customRadios, customRadio) ~= index then
+                StopCustomRadios()
+                PlayCustomRadio(customRadio)
+            elseif isPlaying and not customRadio then
                 StopCustomRadios()
             end
-    
-            volume = GetProfileSetting(306) / 10
-            if previousVolume ~= volume then
-                SendNUIMessage({ type = "volume", volume = volume })
-                previousVolume = volume
-            end
-            Wait(500)
+        elseif isPlaying then
+            StopCustomRadios()
         end
-    end)
+
+        volume = GetProfileSetting(306) / 10
+        if previousVolume ~= volume then
+            SendNUIMessage({ type = "volume", volume = volume })
+            previousVolume = volume
+        end
+        Wait(500)
+    end
 end
 
 lib.onCache('vehicle', function(value)
     if value then
-        mainRadio()
+        CreateThread(mainRadio)
+    end
+end)
+
+CreateThread(function ()
+    while true do
+        if not IsPedInAnyVehicle(cache.ped) then
+            StopCustomRadios()
+        end
+        Wait(1000)
     end
 end)
